@@ -16,7 +16,7 @@ RUN    abuild-keygen -a -i \
     && abuild -r
 
 from alpine as kamailio
-COPY --from=build /home/kamailio/packages/kamailio/x86_64/kamailio* /apk/
+COPY --from=build /home/kamailio/packages/kamailio/x86_64/* /apk/
 RUN echo "/apks" >> etc/apk/repositories \
     && apk update \
     && apk add kamailio kamailio-presence kamailio-kazoo kamailio-db_kazoo \
