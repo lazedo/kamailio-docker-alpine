@@ -1,6 +1,7 @@
 from alpine as build
 ARG TOKEN
 RUN    apk update \
+    && apk add alpine-sdk \
     && mkdir -p /var/cache/distfiles \
     && chmod a+w /var/cache/distfiles \
     && adduser -D kamailio \
