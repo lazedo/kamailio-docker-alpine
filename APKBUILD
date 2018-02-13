@@ -10,7 +10,7 @@ pkgrc=rc0
 
 db_kazoo_pkgname=kamailio-db-kazoo
 db_kazoo_pkgver=0.1.1
-TOKEN=
+TOKEN=${TOKEN:-invalid}
 
 # If building from a git snapshot, specify the gitcommit
 # If building a proper release, leave gitcommit blank
