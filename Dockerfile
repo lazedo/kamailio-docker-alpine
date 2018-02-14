@@ -19,7 +19,9 @@ from alpine as kamailio
 COPY --from=build /home/kamailio/packages/kamailio/x86_64/* /apks/x86_64/
 RUN echo -e "/apks\n$(cat /etc/apk/repositories)" > /etc/apk/repositories \
     && apk update --allow-untrusted \
-    && apk add kamailio kamailio-presence kamailio-kazoo kamailio-db_kazoo \
+    && apk add bash curl iproute2 \
+               kamailio kamailio-db kamailio-presence \
+               kamailio-kazoo kamailio-db_kazoo \
                kamailio-extras kamailio-outbound kamailio-websocket \
                kamailio-tls kamailio-utils kamailio-uuid --allow-untrusted
 
