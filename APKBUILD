@@ -265,7 +265,6 @@ source="${pkgname}-${pkgver}${_suffix}.tar.gz::https://github.com/lazedo/$pkgnam
 prepare() {
 	default_prepare
         mv $srcdir/${db_kazoo_pkgname}-${db_kazoo_pkgver} $srcdir/${pkgname}-${pkgver}${_suffix}/src/modules/db_kazoo
-        cp ../../Makefile.db_kazoo $srcdir/${pkgname}-${pkgver}${_suffix}/src/modules/db_kazoo/Makefile
 	cd "$builddir"
 
 	cd utils/kamctl/
@@ -554,7 +553,7 @@ sipdump() {
 }
 
 sha512sums="248a31c587f3ca6dc13bb805c530916e5398dc39a824da1da087d7a55b79519440ac1c536bd2de13974fb3d242b1c863cb4eaafa7ed24a76cf8fd260ee2bc963  kamailio-5.1.2-rc0.tar.gz
-2ca64116de4267831d89fed5205ca7de17c6684474126858a05cc04434a89511923335ca756ac73e0d37d8731ca1d018e9cc2704e8fc8b5412a65883a6d8b69a  kamailio-db-kazoo-0.1.1.tar.gz
+2ca64116de4267831d89fed5205ca7de17c6684474126858a05cc04434a89511923335ca756ac73e0d37d8731ca1d018e9cc2704e8fc8b5412a65883a6d8b69a  kamailio-db-kazoo-0.1.2.tar.gz
 6badfb611c02ffcb4c2e9937731162ea1a4b737f042ed52120e2f96ebb80b5b7d240b5612c9ca565e693eec9b8c52c1ee5db04dfc47d204501021f984b4b11db  0001-kamdbctl.base.patch
 af8362201957eae6b66baf7368c9ca884024209a396d77c5c52180c9aabe13772e9c6513e59721d39503e5bb7a8c1030f5c10301ea9055bddafb7f01ee2f3076  0004-src_core_tcp_read_c.patch
 cd6e3b677d803cd78561ad14d9b2589fd35ad0096f48047fdcb4ddc7d9103871357efba3b350946844cb53dbb081210746421fc420c22ac845b90251168a628e  kamailio.initd"
