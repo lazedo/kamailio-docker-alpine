@@ -33,4 +33,4 @@ RUN echo -e "/apks\n$(cat /etc/apk/repositories)" > /etc/apk/repositories \
          kamailio-outbound kamailio-websocket \
          kamailio-tls kamailio-utils kamailio-uuid
 
-ENTRYPOINT ["kamailio", "-DD", "-E"]
+CMD ["kamailio", "-DD", "-E"]
