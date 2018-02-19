@@ -9,7 +9,7 @@ pkgrel=${PKG_REL}
 pkgrc=${PKG_RC}
 
 db_kazoo_pkgname=kamailio-db-kazoo
-db_kazoo_pkgver=0.1.1
+db_kazoo_pkgver=0.1.2
 TOKEN=${TOKEN:-invalid}
 
 # If building from a git snapshot, specify the gitcommit
