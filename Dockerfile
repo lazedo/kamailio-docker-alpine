@@ -1,5 +1,9 @@
 FROM alpine as build
 ARG TOKEN
+ARG PKG_VERSION=5.1.2
+ARG PKG_REL=0
+ARG PKG_RC=
+
 RUN    apk update \
     && apk add alpine-sdk \
     && mkdir -p /var/cache/distfiles \
@@ -9,6 +13,9 @@ RUN    apk update \
 USER kamailio
 WORKDIR /home/kamailio
 ENV TOKEN=${TOKEN}
+ENV PKG_VERSION=${PKG_VERSION}
+ENV PKG_REL=${PKG_REL}
+ENV PKG_RC=${PKG_RC}
 RUN    abuild-keygen -a -i \
     && git clone https://github.com/lazedo/kamailio-docker-alpine.git \
     && cd kamailio-docker-alpine \
