@@ -1,4 +1,4 @@
-from alpine as build
+FROM alpine as build
 ARG TOKEN
 RUN    apk update \
     && apk add alpine-sdk \
@@ -15,7 +15,7 @@ RUN    abuild-keygen -a -i \
     && abuild checksum \
     && abuild -r
 
-from alpine as kamailio
+FROM alpine as kamailio
 COPY --from=build /home/kamailio/packages/kamailio/x86_64/* /apks/x86_64/
 RUN echo -e "/apks\n$(cat /etc/apk/repositories)" > /etc/apk/repositories \
     && apk add --update --allow-untrusted \
