@@ -281,6 +281,7 @@ build() {
 		PREFIX=/usr \
 		CC_EXTRA_OPTS="$CFLAGS -D_GNU_SOURCE" \
 		cfg_target=/etc/kamailio/ \
+		extra_defs="-DUSE_RAW_SOCKS -DTM_HASH_STATS" \
 		run_prefix="" \
 		include_modules="$_modules" \
 		LIBDIR=lib \
