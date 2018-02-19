@@ -4,9 +4,9 @@
 # Maintainer: Nathan Angelacos <nangel@alpinelinux.org>
 
 pkgname=kamailio
-pkgver=5.1.2
-pkgrel=0
-pkgrc=rc0
+pkgver=${PKG_VERSION}
+pkgrel=${PKG_REL}
+pkgrc=${PKG_RC}
 
 db_kazoo_pkgname=kamailio-db-kazoo
 db_kazoo_pkgver=0.1.1
