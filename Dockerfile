@@ -18,12 +18,12 @@ RUN    abuild-keygen -a -i \
 from alpine as kamailio
 COPY --from=build /home/kamailio/packages/kamailio/x86_64/* /apks/x86_64/
 RUN echo -e "/apks\n$(cat /etc/apk/repositories)" > /etc/apk/repositories \
-    && apk update --allow-untrusted \
-    && apk add bash curl iproute2 \
-               kamailio kamailio-db kamailio-json kamailio-presence \
-               kamailio-kazoo kamailio-db_kazoo \
-               kamailio-debugger kamailio-extras \
-               kamailio-outbound kamailio-websocket \
-               kamailio-tls kamailio-utils kamailio-uuid --allow-untrusted
+    && apk add --update --allow-untrusted \
+         bash curl iproute2 \
+         kamailio kamailio-db kamailio-json kamailio-presence \
+         kamailio-kazoo kamailio-db_kazoo \
+         kamailio-debugger kamailio-extras \
+         kamailio-outbound kamailio-websocket \
+         kamailio-tls kamailio-utils kamailio-uuid
 
 ENTRYPOINT ["kamailio", "-DD", "-E"]
