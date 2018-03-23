@@ -4,7 +4,7 @@
 # Maintainer: Nathan Angelacos <nangel@alpinelinux.org>
 
 pkgname=kamailio
-pkgver=${PKG_VERSION}
+pkgver=${PKG_VERSION:-5.1.2}
 pkgrel=${PKG_REL}
 pkgrc=${PKG_RC}
 
