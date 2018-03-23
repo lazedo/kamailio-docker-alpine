@@ -8,6 +8,8 @@ pkgver=${PKG_VERSION}
 pkgrel=${PKG_REL}
 pkgrc=${PKG_RC}
 
+pkg_owner=kamailio
+
 db_kazoo_pkgname=kamailio-db-kazoo
 db_kazoo_pkgver=0.1.2
 TOKEN=${TOKEN:-invalid}
@@ -19,9 +21,8 @@ _gitcommit=
 [ ! -z "${_gitcommit}" ] && pkgver="${pkgver}.$(date +%Y%m%d)"
 [ ! -z "${_gitcommit}" ] && _suffix="-${_gitcommit:0:7}"
 [ ! -z "${_gitcommit}" ] && builddir="$srcdir/$pkgname-$_gitcommit"
-[ -z "${_gitcommit}" ] && _suffix="-${pkgrc}"
+[ -z "${_gitcommit}" ] && _suffix="${pkgrc}"
 [ -z "${_gitcommit}" ] && builddir="$srcdir/${pkgname}-${pkgver}${_suffix}"
-[ -z "${_gitcommit}" ] && _suffix="-${pkgrc}"
 [ -z "${_gitcommit}" ] && _gitcommit="${pkgver}${_suffix}"
 
 pkgdesc="Open Source SIP Server"
@@ -255,7 +256,7 @@ for _i in db postgres sqlite dbtext mysql \
    eval "_modules=\"\$_modules \$_mod_list_$_i\""
 done
 
-source="${pkgname}-${pkgver}${_suffix}.tar.gz::https://github.com/lazedo/$pkgname/archive/${_gitcommit}.tar.gz
+source="${pkgname}-${pkgver}${_suffix}.tar.gz::https://github.com/${pkg_owner}/$pkgname/archive/${_gitcommit}.tar.gz
         ${db_kazoo_pkgname}-${db_kazoo_pkgver}.tar.gz::https://$TOKEN@github.com/2600hz/$db_kazoo_pkgname/archive/${db_kazoo_pkgver}.tar.gz
 	0001-kamdbctl.base.patch
 	0004-src_core_tcp_read_c.patch
